@@ -19,11 +19,11 @@
       "hash": "f575e8626ebcbbe8dc3060aad5fd4adcde3ab138"
     },
     "com.tlabaltoh.webview": {
-      "version": "https://github.com/TLabAltoh/TLabWebView.git",
+      "version": "https://github.com/TLabAltoh/TLabWebView.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5d781641c19cab5cf46fd9830062a5f60d567335"
+      "hash": "2397e37c171738185f4ee4fe7989533a6eb7cb6d"
     },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
