@@ -1580,6 +1580,22 @@ PrefabInstance:
       propertyPath: m_url
       value: https://www.youtube.com/watch?v=a3ICNMQW7Ok
       objectReference: {fileID: 0}
+    - target: {fileID: 6905492866619264919, guid: cf5767a7a6501d04fb202c6ed3ef427c, type: 3}
+      propertyPath: m_jsEventCallback.onPageFinish
+      value: "\r\n            var elements = [];\r\n\r\n            function searchShadowRoot(node,
+        id) {\r\n                if (node == null) {\r\n                    return;\r\n               
+        }\r\n\r\n                if (node.shadowRoot != undefined && node.shadowRoot
+        != null) {\r\n                    if (!elements.includes(node.shadowRoot))
+        {\r\n                        elements.push(node.shadowRoot);\r\n                   
+        }\r\n                    searchShadowRoot(node.shadowRoot, id);\r\n               
+        }\r\n\r\n                for (var i = 0; i < node.childNodes.length; i++)
+        {\r\n                    searchShadowRoot(node.childNodes[i], id);\r\n               
+        }\r\n            }\r\n\r\n            elements = elements.concat([...document.querySelectorAll('input,
+        textarea')]);\r\n            searchShadowRoot(document, 'input');\r\n           
+        searchShadowRoot(document, 'textarea');\r\n\r\n            for (var i = 0;
+        i < elements.length; i++) {\r\n                elements[i].setAttribute('inputmode',
+        'none');\r\n            }\r\n            "
+      objectReference: {fileID: 0}
     - target: {fileID: 6960073521778781876, guid: cf5767a7a6501d04fb202c6ed3ef427c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2136,6 +2152,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f478d43f27e324b7199d5dccff4298b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1836341280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1858434254838504376, guid: cf5767a7a6501d04fb202c6ed3ef427c, type: 3}
+  m_PrefabInstance: {fileID: 1076857299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836341287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836341280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067524af68e5b9f4fa0a2e2b46f2adcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1863297011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2272,13 +2305,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
   settings: {fileID: 11400000, guid: e2f0e39f57c9ed8488d57fc82377b83c, type: 2}
-  onStartHover:
-    m_PersistentCalls:
-      m_Calls: []
-  onEndHover:
-    m_PersistentCalls:
-      m_Calls: []
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
   interactWithTouch: 1

@@ -54,6 +54,12 @@ public class XRCardboardInputModule : PointerInputModule
         ProcessMove(pointerEventData);
     }
 
+    bool GetInputDown() => interactWithTouch ? Input.GetMouseButtonDown(0) : Input.GetButtonDown(settings.ClickInput);
+
+    bool GetInput() => interactWithTouch ? Input.GetMouseButton(0) : Input.GetButton(settings.ClickInput);
+
+    bool GetInputUp() => interactWithTouch ? Input.GetMouseButtonUp(0) : Input.GetButtonUp(settings.ClickInput);
+
     void HandleSelection()
     {
         GameObject handler = ExecuteEvents.GetEventHandler<IEventSystemHandler>(pointerEventData.pointerEnter);
@@ -75,32 +81,16 @@ public class XRCardboardInputModule : PointerInputModule
             ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerEnterHandler);
         }
 
-        if (interactWithTouch)
+        if ((settings.GazeEnabled ? Time.realtimeSinceStartup > currentTargetClickTime : false) || GetInputDown())
         {
-            if ((settings.GazeEnabled ? Time.realtimeSinceStartup > currentTargetClickTime : false) || Input.GetMouseButtonDown(0))
-            {
-                currentTargetClickTime = float.MaxValue;
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerClickHandler);
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerDownHandler);
-            }
-            else if (Input.GetMouseButton(0))
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.dragHandler);
-            else if (Input.GetMouseButtonUp(0))
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerUpHandler);
+            currentTargetClickTime = float.MaxValue;
+            ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerClickHandler);
+            ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerDownHandler);
         }
-        else
-        {
-            if ((settings.GazeEnabled ? Time.realtimeSinceStartup > currentTargetClickTime : false) || Input.GetButtonDown(settings.ClickInput))
-            {
-                currentTargetClickTime = float.MaxValue;
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerClickHandler);
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerDownHandler);
-            }
-            else if (Input.GetButton(settings.ClickInput))
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.dragHandler);
-            else if (Input.GetButtonUp(settings.ClickInput))
-                ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerUpHandler);
-        }
+        else if (GetInput())
+            ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.dragHandler);
+        else if (GetInputUp())
+            ExecuteEvents.ExecuteHierarchy(currentTarget, pointerEventData, ExecuteEvents.pointerUpHandler);
     }
 
     void StopHovering()
