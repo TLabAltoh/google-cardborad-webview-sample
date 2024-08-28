@@ -1,7 +1,7 @@
 using UnityEngine;
 using TLab.Android.WebView;
 
-public class DisableVirtualKeyborad : MonoBehaviour
+public class DisableScreenKeyborad : MonoBehaviour
 {
 #if UNITY_EDITOR
     private void Reset()
