@@ -1581,6 +1581,10 @@ PrefabInstance:
       value: https://www.youtube.com/watch?v=a3ICNMQW7Ok
       objectReference: {fileID: 0}
     - target: {fileID: 6905492866619264919, guid: cf5767a7a6501d04fb202c6ed3ef427c, type: 3}
+      propertyPath: m_useHardwareBuffer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905492866619264919, guid: cf5767a7a6501d04fb202c6ed3ef427c, type: 3}
       propertyPath: m_jsEventCallback.onPageFinish
       value: "\r\n            var elements = [];\r\n\r\n            function searchShadowRoot(node,
         id) {\r\n                if (node == null) {\r\n                    return;\r\n               
