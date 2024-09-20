@@ -23,7 +23,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a6aa4bd8d2b639bdfb43dd9c9d95f256a78bb0f3"
+      "hash": "5b72a3a73238ffaba559e81835896faad8bad88b"
     },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
@@ -95,7 +95,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mobile.android-logcat": {
-      "version": "1.4.2",
+      "version": "1.4.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

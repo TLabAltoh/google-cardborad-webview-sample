@@ -11,7 +11,7 @@ public class DisableScreenKeyborad : MonoBehaviour
             return;
 
         // https://stackoverflow.com/a/65358992/22575350
-        webview.jsEventCallback.onPageFinish = @"
+        webview.eventCallback.onPageFinish = @"
             var elements = [];
 
             function searchShadowRoot(node, id) {
