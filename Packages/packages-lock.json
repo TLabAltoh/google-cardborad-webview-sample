@@ -9,7 +9,7 @@
         "com.unity.xr.management": "3.2.9",
         "com.unity.xr.legacyinputhelpers": "2.1.4"
       },
-      "hash": "591c2282f190cec83c70f0005634adfa882ef7a6"
+      "hash": "de21979f29f592ce5c4a788105061504724a21e3"
     },
     "com.tlabaltoh.vkeyborad": {
       "version": "https://github.com/TLabAltoh/TLabVKeyborad.git",
@@ -23,7 +23,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "89a594422410e3027c3f16c3c5e8e0d7a7af1491"
+      "hash": "38c5a288beb6df511cc976752f33ec1147476bb1"
     },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
