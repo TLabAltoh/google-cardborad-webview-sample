@@ -16,14 +16,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a591923e926c65e9508b28886c5c5806888fa472"
+      "hash": "0f03d011a1721f1b94032fa4daa95654dc7dadcc"
     },
     "com.tlabaltoh.webview": {
       "version": "https://github.com/TLabAltoh/TLabWebView.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "41de97f5a16e3fc55df34d1fc4f0df991e35a23e"
+      "hash": "7bf48eeff1e9decabce98e56a986b66f2d6dbeaf"
     },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
