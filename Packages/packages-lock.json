@@ -16,7 +16,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0fc98ae70bb910fcedf41b1e5f448514d41488b2"
+      "hash": "12271697c85ddd87e4d3e28587b5bc3b0f408ae1"
     },
     "com.tlabaltoh.webview": {
       "version": "https://github.com/TLabAltoh/TLabWebView.git#upm",
