@@ -1,17 +1,16 @@
 using UnityEngine;
-using TLab.Android.WebView;
+using TLab.WebView;
 
 public class DisableScreenKeyborad : MonoBehaviour
 {
-#if UNITY_EDITOR
-    private void Reset()
+    public void OnPageFinish(string url)
     {
-        var webview = GetComponent<TLabWebView>();
-        if (webview == null)
+        var container = GetComponent<BrowserContainer>();
+        if (container == null)
             return;
 
         // https://stackoverflow.com/a/65358992/22575350
-        webview.eventCallback.onPageFinish = @"
+        container.browser.EvaluateJS(@"
             var elements = [];
 
             function searchShadowRoot(node, id) {
@@ -38,9 +37,6 @@ public class DisableScreenKeyborad : MonoBehaviour
             for (var i = 0; i < elements.length; i++) {
                 elements[i].setAttribute('inputmode', 'none');
             }
-            ";
-
-        UnityEditor.EditorUtility.SetDirty(webview);
+            ");
     }
-#endif
 }
