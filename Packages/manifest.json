@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.google.xr.cardboard": "https://github.com/googlevr/cardboard-xr-plugin.git",
-    "com.tlabaltoh.vkeyborad": "https://github.com/TLabAltoh/TLabVKeyborad.git",
+    "com.tlabaltoh.vkeyborad": "https://github.com/TLabAltoh/TLabVKeyborad.git#upm",
     "com.tlabaltoh.webview": "https://github.com/TLabAltoh/TLabWebView.git#upm",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.feature.development": "1.0.1",
